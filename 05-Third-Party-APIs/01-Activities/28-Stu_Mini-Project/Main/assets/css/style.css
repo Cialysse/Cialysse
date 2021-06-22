@@ -1,0 +1,46 @@
+/* add code to fix colors */
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+thead {
+  font-weight: 700;
+}
+
+.custom-jumbotron,
+.custom-card .card-header,
+.custom-card .card-footer,
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+}
+
+.custom-card {
+}
+
+.custom-card .card-body,
+.custom-modal .modal-body {
+}
+
+.custom-btn {
+}
+
+.custom-btn:hover {
+}
+
+.custom-table tbody {
+}
+
+.delete-project-btn {
+  cursor: pointer;
+}
