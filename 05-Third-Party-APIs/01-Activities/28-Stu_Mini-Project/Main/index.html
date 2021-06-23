@@ -42,7 +42,7 @@
             <li class="list-group-item">Hourly Rate</li>
           </ul>
           <div class="card-footer">
-            <button class="btn btn-block custom-btn">Add
+            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
               Project</button>
           </div>
         </div>
@@ -50,20 +50,33 @@
 
       <section class="col-12 col-md-8 col-lg-9">
         <div class="table-responsive">
-          <!--🏓-->
+          <table class="table table-bordered custom-table">
+            <thead>
+              <tr>
+                <th scope="col">Project Name</th>
+                <th scope="col">Project Type</th>
+                <th scope="col">Hourly Rate ($)</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Days Until Due Date</th>
+                <th scope="col">Potential Total Earnings ($)</th>
+                <th scope="col" class="p-3"></th>
+              </tr>
+            </thead>
+            <tbody id="project-display"></tbody>
+          </table>
         </div>
       </section>
     </div>
   </main>
 
   <!-- Modal -->
-  <div class="modal fade custom-modal" tabindex="-1" role="dialog"
+  <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
     aria-labelledby="project-modal-form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
-          <button class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -71,27 +84,37 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="project-name-input">Project Name</label>
-              <!--REKT-->
+              <input type="text" id="project-name-input" class="form-control" placeholder="Enter the project's name"
+                required />
             </div>
 
             <div class="form-group">
               <label for="project-type-input">Project Type</label>
-              <!--GME-->
+              <select class="form-control" id="project-type-input">
+                <option selected disabled>Pick one...</option>
+                <option value="Web Application (Front End)">Web Application (Front End)</option>
+                <option value="Web Application (Back End)">Web Application (Back End)</option>
+                <option value="Web Application (Full Stack)">Web Application (Full Stack)</option>
+                <option value="Mobile Application">Mobile Application</option>
+                <option value="Print Campaign">Print Campaign</option>
+                <option value="Digital Marketing Campaign">Digital Marketing Campaign</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="hourly-rate-input">Hourly Rate ($)</label>
-              <!--AMC-->
+              <input type="number" id="hourly-rate-input" class="form-control" placeholder="$" min="0" required />
             </div>
 
             <div class="form-group">
               <label for="due-date-input">Due Date</label>
-              <!--DOGE-->
+              <input type="text" min='1' id="due-date-input" class="form-control" placeholder="When is the project due?"
+                required />
             </div>
           </div>
           <div class="modal-footer">
-            <button  class="btn btn-secondary">Close</button>
-            <button  class="btn custom-btn">Submit Project Info</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn custom-btn">Submit Project Info</button>
           </div>
         </form>
       </div>
